@@ -1,18 +1,29 @@
-import React, {Component} from "react";
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../index.css';
 
-class Header extends Component{
+class Header extends Component {
 
-    render(){
-        return(
-            <Navbar>
-                <Nav>
-                    <NavItem> <Link to="/" > Home </Link> </NavItem>
-                    <NavItem> <Link to="/list" > Add Student </Link> </NavItem>
-                </Nav>
-            </Navbar>
+    render() {
+        return (
+            <>
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                    <Container>
+                        <Link className="navbar-brand" to="/list"> React Bootstrap </Link>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="me-auto">
+                                <Link className="nav-link" to="/list" >Users </Link>
+                            </Nav>
+                            <Nav>
+                            <Link className="nav-link" to="/login" >Login </Link>
+                                
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </>
         )
     }
 }
